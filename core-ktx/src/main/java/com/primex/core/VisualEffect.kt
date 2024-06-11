@@ -20,6 +20,7 @@ package com.primex.core
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.os.Build
 import android.util.Log
 import androidx.annotation.DrawableRes
 import androidx.annotation.FloatRange
@@ -161,9 +162,9 @@ private class EffectNode(
                         BitmapFactory.Options().apply {
                             inScaled = false
 //                          inTargetDensity = inDensity
-//                          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                              this.inPreferredConfig = Bitmap.Config.HARDWARE
-//                          }
+                          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                              this.inPreferredConfig = Bitmap.Config.ARGB_8888
+                          }
                         }
                     )
                 }
